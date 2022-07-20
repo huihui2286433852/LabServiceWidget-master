@@ -3,7 +3,6 @@ package com.ilab.labservicewidget.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.CheckBox
-import android.widget.Toast
 import com.ilab.labservicewidget.R
 import com.ilab.widgetlibrary.CircleProgressView
 

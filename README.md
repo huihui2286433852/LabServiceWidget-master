@@ -1,13 +1,6 @@
-# CircleProgressView
-##### 环形进度条显示效果图
+#添加工程
 
-![进度条效果](https://github.com/huihui2286433852/LabServiceWidget-master/blob/master/images/jindutiao.gif "inner_circle.png")
-
-进度条效果
-
-##### 添加工程
-
-###### **Step 1.** Add the JitPack repository to your build file 
+###### **Step 1.** Add the JitPack repository to your build file
 
 ​	Add it in your root build.gradle at the end of repositories:
 
@@ -26,10 +19,16 @@ allprojects {
 
 ```
 dependencies {
-	        implementation 'com.github.huihui2286433852:CircleProgressView:1.0.1'
+	        implementation 'com.github.huihui2286433852:LabServiceWidget-master:v1.0.0'
 	}
 ```
 
+# CircleProgressView
+##### 环形进度条显示效果图
+
+![进度条效果](https://github.com/huihui2286433852/LabServiceWidget-master/blob/master/images/jindutiao.gif "inner_circle.png")
+
+进度条效果
 
 
 ##### 使用方式，更多属性请参考表格属性
