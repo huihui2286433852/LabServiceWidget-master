@@ -1,9 +1,9 @@
 # CircleProgressView
 ##### 环形进度条显示效果图
 
-![显示内圆](https://images.gitee.com/uploads/images/2020/0902/143459_60d25077_5290883.png "inner_circle.png")
+![进度条效果](https://github.com/huihui2286433852/LabServiceWidget-master/blob/master/images/jindutiao.gif "inner_circle.png")
 
-显示内圆
+进度条效果
 
 ##### 添加工程
 
@@ -152,7 +152,7 @@ dependencies {
 # SingleChoiceSpinner
 ##### 下拉单项选择框
 
-![显示内圆](https://images.gitee.com/uploads/images/2020/0902/143459_60d25077_5290883.png "inner_circle.png")
+![下拉选择框效果](https://github.com/huihui2286433852/LabServiceWidget-master/blob/master/images/xialakuang.gif "inner_circle.png")
 
 ###### 使用的xml代码
 
