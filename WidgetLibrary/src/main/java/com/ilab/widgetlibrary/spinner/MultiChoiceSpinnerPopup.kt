@@ -2,6 +2,7 @@ package com.ilab.widgetlibrary.spinner
 
 import android.content.Context
 import android.graphics.PorterDuff
+import android.graphics.drawable.Drawable
 import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
@@ -17,15 +18,21 @@ import com.ilab.widgetlibrary.R
 
 class MultiChoiceSpinnerPopup(
     var context: Context,
+    var spinnerBg: Drawable?,
+    var checkBoxButton:Drawable?,
+    var spinnerTextColor: Int,
+    var spinnerTextCheckColor: Int,
+    var textSize: Float,
     var onItemClick: (list: MutableSet<Int>) -> Unit,
     var onPopupDismiss: () -> Unit
 ) {
     var root: View = LayoutInflater.from(context).inflate(R.layout.layout_spinner_popup, null)
     private var popupWindow: PopupWindow = PopupWindow(context)
     private var selectList = mutableSetOf<Int>()
-    private var mAdapter = MultiChoicePopupAdapter(selectList) {
-        onItemClick(it)
-    }
+    private var mAdapter =
+        MultiChoicePopupAdapter(selectList, checkBoxButton,spinnerTextColor, spinnerTextCheckColor, textSize) {
+            onItemClick(it)
+        }
 
     init {
         popupWindow.contentView = root
@@ -40,6 +47,11 @@ class MultiChoiceSpinnerPopup(
                 )
             )
         }
+
+        if (spinnerBg != null) {
+            root.setBackgroundDrawable(spinnerBg)
+        }
+
         //popup 关闭监听
         popupWindow.setOnDismissListener {
             onPopupDismiss()
@@ -86,10 +98,52 @@ class MultiChoiceSpinnerPopup(
     fun dismiss() {
         popupWindow.dismiss()
     }
+
+
+    /**
+     * 设置弹框背景
+     */
+    fun setPopSpinnerBg(bg: Drawable) {
+        spinnerBg = bg
+        if (spinnerBg != null) {
+            root.setBackgroundDrawable(spinnerBg)
+        }
+    }
+
+    /**
+     * 设置文本颜色
+     */
+    fun setPopSpinnerTextColor(color: Int) {
+        spinnerTextColor = color
+        mAdapter.spinnerTextColor = color
+        mAdapter.notifyDataSetChanged()
+    }
+
+    /**
+     * 设置选中文本颜色
+     */
+    fun setPopSpinnerTextCheckColor(color: Int) {
+        spinnerTextCheckColor = color
+        mAdapter.spinnerTextCheckColor = color
+        mAdapter.notifyDataSetChanged()
+    }
+
+    /**
+     * 设置选中文本颜色
+     */
+    fun setPopTextSize(size: Float) {
+        textSize = size
+        mAdapter.textSize = size
+        mAdapter.notifyDataSetChanged()
+    }
 }
 
 class MultiChoicePopupAdapter(
     var selectList: MutableSet<Int>,
+    var checkBoxButton:Drawable?,
+    var spinnerTextColor: Int,
+    var spinnerTextCheckColor: Int,
+    var textSize: Float,
     var onItemClick: (list: MutableSet<Int>) -> Unit,
 ) :
     BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_multi_choice_spinner_popup) {
@@ -98,6 +152,8 @@ class MultiChoicePopupAdapter(
         checkBox.text = item
         Log.i("xxxxxx", "${holder.layoutPosition}")
         checkBox.isChecked = selectList.contains(holder.layoutPosition)
+        checkBox.textSize = textSize
+
         checkBox.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 selectList.add(holder.layoutPosition)
@@ -105,6 +161,15 @@ class MultiChoicePopupAdapter(
                 selectList.remove(holder.layoutPosition)
             }
             onItemClick(selectList)
+        }
+
+        if (checkBox.isChecked) {
+            checkBox.setTextColor(spinnerTextCheckColor)
+        } else {
+            checkBox.setTextColor(spinnerTextColor)
+        }
+        if(checkBoxButton != null){
+            checkBox.buttonDrawable = checkBoxButton
         }
     }
 }

@@ -28,15 +28,17 @@
     </declare-styleable>
 
     <declare-styleable name="MySpinner">
-        <attr name="text_color" format="color"/><!-- 文本颜色 -->
-        <attr name="text_size" format="dimension"/><!-- 文本大小 -->
-        <attr name="hint" format="string"/><!-- 提示颜色 -->
-        <attr name="hint_color" format="color"/><!-- 提示大小 -->
-        <attr name="arrow_color" format="color"/><!-- 箭头颜色 -->
-        <attr name="text_bg" format="reference"/><!-- 文本背景 -->
-        <attr name="spinner_bg" format="reference"/><!-- 下拉框背景 -->
-        <attr name="spinner_text_padding" format="dimension"/><!-- 下拉框文本颜色 -->
-        <attr name="spinner_text_color" format="color"/><!-- 下拉框文本颜色 -->
-        <attr name="spinner_text_check_color" format="color"/><!-- 下拉框选中文本颜色 -->
+        <attr name="text_color" format="color" /><!-- 文本颜色 -->
+        <attr name="text_size" format="dimension" /><!-- 文本大小 -->
+        <attr name="text_item_bg" format="reference" /><!-- 文本框中选中条目背景 -->
+        <attr name="hint" format="string" /><!-- 提示颜色 -->
+        <attr name="hint_color" format="color" /><!-- 提示大小 -->
+        <attr name="arrow_color" format="color" /><!-- 箭头颜色 -->
+        <attr name="text_bg" format="reference" /><!-- 文本背景 -->
+        <attr name="spinner_bg" format="reference" /><!-- 下拉框背景 -->
+        <attr name="spinner_check_box_bottom" format="reference" /><!-- checkBox样式 -->
+        <attr name="spinner_text_padding" format="dimension" /><!-- 下拉框文本颜色 -->
+        <attr name="spinner_text_color" format="color" /><!-- 下拉框文本颜色 -->
+        <attr name="spinner_text_check_color" format="color" /><!-- 下拉框选中文本颜色 -->
     </declare-styleable>
 </resources>

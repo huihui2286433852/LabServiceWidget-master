@@ -142,7 +142,8 @@ class SpinnerPopup(
 }
 
 class PopupAdapter(
-    var position: Int, var spinnerTextColor: Int,
+    var position: Int,
+    var spinnerTextColor: Int,
     var spinnerTextCheckColor: Int,
     var textSize: Float,
 ) :

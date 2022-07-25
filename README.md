@@ -19,7 +19,7 @@ allprojects {
 
 ```
 dependencies {
-	        implementation 'com.github.huihui2286433852:LabServiceWidget-master:v1.0.0'
+	        implementation 'com.github.huihui2286433852:LabServiceWidget-master:v1.0.1'
 	}
 ```
 
@@ -153,7 +153,7 @@ dependencies {
 
 ![下拉选择框效果](https://github.com/huihui2286433852/LabServiceWidget-master/blob/master/images/xialakuang.gif "inner_circle.png")
 
-###### 使用的xml代码
+###### 使用单选下拉选择框组件xml代码
 
 ```
     <com.ilab.widgetlibrary.spinner.SingleChoiceSpinner
@@ -172,7 +172,7 @@ dependencies {
         app:spinner_text_check_color="#ff0000" />
 ```
 
-###### 使用kotlin代码
+###### 使用单选下拉选择框组件kotlin代码
 
 ```
         val mySpinner = findViewById<SingleChoiceSpinner>(R.id.mySpinner)
@@ -205,6 +205,7 @@ dependencies {
 | setPopSpinnerBg               | 设置下拉框背景                           |
 | setPopSpinnerTextColor        | 设置下拉框文本颜色                         |
 | setPopSpinnerTextCheckColor   | 设置下拉框选中文本颜色                       |
+| setTextItemBg                 | 文本框中选中条目背景（只对多选框起效）                       |
 
 | xml代码设置下拉选择属性             |                                                        |
 | ----------------------------- | ------------------------------------------------------ |
@@ -218,3 +219,4 @@ dependencies {
 | spinner_bg                    | 设置下拉框背景                           |
 | spinner_text_color            | 设置下拉框文本颜色                         |
 | spinner_text_check_color      | 设置下拉框选中文本颜色                       |
+| text_item_bg                  | 文本框中选中条目背景（只对多选框起效）                       |

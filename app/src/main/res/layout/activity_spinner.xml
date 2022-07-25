@@ -22,4 +22,23 @@
         app:spinner_text_color="#ff0000"
         app:spinner_text_check_color="#ff0000" />
 
+
+    <com.ilab.widgetlibrary.spinner.MultiChoiceSpinner
+        android:id="@+id/myMultiSpinner"
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        app:hint="请选择"
+        app:hint_color="#ff0000"
+        app:text_color="#ff0000"
+        app:text_size="24sp"
+        app:arrow_color="#ff0000"
+        app:text_bg="@drawable/aa"
+        app:text_item_bg="@drawable/aa"
+        app:spinner_bg="@drawable/aa"
+        app:spinner_text_padding="10dp"
+        app:spinner_text_color="#ff0000"
+        app:spinner_text_check_color="#ff0000"
+        />
+
 </LinearLayout>
